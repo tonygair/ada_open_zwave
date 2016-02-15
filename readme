@@ -1,0 +1,68 @@
+------------------------------------------------------------------------------
+--                                                                          --
+--                   Ada Open Zwave -- A binding to Open_Zwave              --
+--                                                                          --
+--                                                                          --
+--                                                                          --
+--                     Copyright (C) 2016 Anthony Gair                      --
+--                                                                          --
+--  This library is free software;  you can redistribute it and/or modify   --
+--  it under terms of the  GNU General Public License  as published by the  --
+--  Free Software  Foundation;  either version 3,  or (at your  option) any --
+--  later version. This library is distributed in the hope that it will be  --
+--  useful, but WITHOUT ANY WARRANTY;  without even the implied warranty of --
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.                    --
+--                                                                          --
+--  As a special exception under Section 7 of GPL version 3, you are        --
+--  granted additional permissions described in the GCC Runtime Library     --
+--  Exception, version 3.1, as published by the Free Software Foundation.   --
+--                                                                          --
+--  You should have received a copy of the GNU General Public License and   --
+--  a copy of the GCC Runtime Library Exception along with this program;    --
+--  see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see   --
+--  <http://www.gnu.org/licenses/>.                                         --
+--                                                                          --
+--  As a special exception, if other files instantiate generics from this   --
+--  unit, or you link this unit with other files to produce an executable,  --
+--  this  unit  does not  by itself cause  the resulting executable to be   --
+--  covered by the GNU General Public License. This exception does not      --
+--  however invalidate any other reasons why the executable file  might be  --
+--  covered by the  GNU Public License.                                     --
+--                                                                          --
+-- 							                    --
+------------------------------------------------------------------------------
+
+
+This is a binding to  openzwave-1.2.919 . It will require you to compile the 
+manager_wrapper.c using C with a command such as 
+
+gcc  -I/home/tony/ada/tools/openzwave-1.2.919/cpp/src -c manager_wrapper.cpp
+
+taking note that I keep my built openzwave library in /home/tony/ada/tools/ .
+
+Also in the open_zwave.adb file you will need three pragma linker_options just after 
+"package body is"
+1) to point to the open_zwave library above 
+i.e. mine would be 
+pragma Linker_Options ("-L/home/tony/ada/tools/openzwave-1.2.919/");
+      
+2) to point to the compiled file manager_wrapper.o
+i.e. pragma Linker_Options ("where_you_keep_it/manager_wrapper.o")
+
+3) to point to the library stdc++
+    i.e. pragma Linker_Options ("-lstdc++");
+
+How I'm using this library
+
+I'm using this to create a home efficiency application to improve central heating.
+I'm using a raspberry pi B model 2 running raspbian jessie connected to a AEON Z STICK and 
+Stella Z valves!
+
+I apologise in advance about publishing possibly a little early but I would be pleased if people
+would contribute.
+
+I am currently writing a demo app with hopefully some helpful extra functions. I will also be releasing the work I
+have done on the home efficiency app with a similar license. 
+
+Have fun!
+
