@@ -1,0 +1,13 @@
+with "openzwave.gpr";
+library project ada_open_zwave is
+   for Languages use ("Ada","C++");
+   for Source_Dirs use ("src");
+   for object_Dir use ".obj";
+   for Library_Name use "ada_open_zwave";
+   for Library_dir use "lib";
+   
+   package Linker is
+     for Linker_Options use ("-lstdc++");
+   end Linker;
+   
+end  ada_open_zwave;
