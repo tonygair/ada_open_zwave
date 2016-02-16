@@ -1,0 +1,14 @@
+library project openzwave is
+
+   ROOT :=  "openzwave-1.4.1/";
+   for Languages use ("C++");
+   for Source_Dirs use (ROOT & "cpp/src");
+   for externally_Built use "True";   
+   for Library_Name use "openzwave";
+   for Library_dir use ROOT;
+   
+   package Linker is
+     for Linker_Options use ("-lstdc++");
+   end Linker;
+   
+end  openzwave;
