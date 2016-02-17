@@ -8,7 +8,7 @@ library project openzwave is
    for Library_dir use ROOT;
    
    package Linker is
-     for Linker_Options use ("-lstdc++");
+     for Linker_Options use ("-ludev", "-lstdc++");
    end Linker;
    
 end  openzwave;

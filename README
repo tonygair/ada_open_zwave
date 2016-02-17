@@ -33,30 +33,23 @@
 ------------------------------------------------------------------------------
 
 
-This is a binding to  openzwave-1.2.919 . It will require you to compile the 
-manager_wrapper.c using C with a command such as 
+This is a binding to the  openzwave c library.
+Just type "make" and then include the gpr file in your gnat gps project.
 
-gcc  -I/home/tony/ada/tools/openzwave-1.2.919/cpp/src -c manager_wrapper.cpp
+You will also need to add the user you running any application using it under to 
+the group dialout so the USB port you have your zwave coordinator device attached to.
 
-taking note that I keep my built openzwave library in /home/tony/ada/tools/ .
-
-Also in the open_zwave.adb file you will need three pragma linker_options just after 
-"package body is"
-1) to point to the open_zwave library above 
-i.e. mine would be 
-pragma Linker_Options ("-L/home/tony/ada/tools/openzwave-1.2.919/");
-      
-2) to point to the compiled file manager_wrapper.o
-i.e. pragma Linker_Options ("where_you_keep_it/manager_wrapper.o")
-
-3) to point to the library stdc++
-    i.e. pragma Linker_Options ("-lstdc++");
+i.e. for the user tony you would need 'sudo adduser tony dialout' so the usb port you
+have connected your Aeon Z2 stick to can be accessed.
 
 How I'm using this library
 
-I'm using this to create a home efficiency application to improve central heating.
+I'm using this to create a home efficiency application to improve central heating. 
+I've called this KushtiBot and will be developing it at github. Its not in any stage to use at the moment 
+but feel free to contribute. The meaning of Kushti is "just right" in the Romani language.
+
 I'm using a raspberry pi B model 2 running raspbian jessie connected to a AEON Z STICK and 
-Stella Z valves!
+Stella Z valves! 
 
 I apologise in advance about publishing possibly a little early but I would be pleased if people
 would contribute.
