@@ -5,9 +5,9 @@ library project ada_open_zwave is
    for object_Dir use ".obj";
    for Library_Name use "ada_open_zwave";
    for Library_dir use "lib";
-   
+
    package Linker is
-     for Linker_Options use ("-lstdc++");
+     for Linker_Options use ("-lpthread","-lstdc++");
    end Linker;
-   
+
 end  ada_open_zwave;
