@@ -97,7 +97,7 @@ package body Open_Zwave is
          pragma Convention (C, C_Number);
 
          function C_Version return C_Number;
-         pragma Import (C, C_Version, "Version");
+         pragma Import (C, C_Version, "Version_Number");
       begin -- Version
          Check_Active;
 
