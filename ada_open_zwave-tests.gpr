@@ -1,0 +1,7 @@
+with "ada_open_zwave.gpr";
+project ada_open_zwave.Tests is
+   for Languages use ("Ada");
+   for main use ("open_zwave-tests-main.adb");
+   for Source_Dirs use ("tests/**");
+   for object_Dir use ".obj/" & project'Name;
+end  ada_open_zwave.Tests;
